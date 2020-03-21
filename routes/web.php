@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/','CalendarController@index');
+Route::get('/day/{day}/month/{month}','ContactController@member');
+
+
 
 
 Auth::routes();
