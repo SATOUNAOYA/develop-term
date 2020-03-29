@@ -52,9 +52,10 @@ class Calendar extends Model
 </tr>
 EOS;
    
+                        
         // カレンダーの日付部分を生成する
         while ($day <= $lastDay) {
-                    
+                   
             $this->html .= "<tr>";
             // 各週を描画するHTMLソースを生成する
             for ($i = 0; $i < 7; $i++) {

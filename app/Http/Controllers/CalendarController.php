@@ -18,8 +18,5 @@ public function index(Request $request)
 
         return view('calendar.index', ['cal_tag' => $tag]);
     }
- public function day($day)
-    {
-        print_r($day);
-    }
+
 }

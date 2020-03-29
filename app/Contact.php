@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    public function member($day, $month)
-    {
-        $params = [
-            'day' => $day,
-            'month'     => $month,
-            
-        ];
-
-        print_r($params);
-        
-    }
+    protected $fillable = [
+        'name',
+        'staydays',
+        'guests',
+        'room',
+    ];
 }

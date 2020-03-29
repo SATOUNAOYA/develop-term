@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/','CalendarController@index');
-Route::get('/day/{day}/month/{month}','ContactController@member');
+
+
+Route::get('contacts/form/{month}/{day}','ContactController@reservationform');
+Route::post('contacts/complete','ContactController@complete');
 
 
 

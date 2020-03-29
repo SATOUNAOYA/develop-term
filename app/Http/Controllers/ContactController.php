@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
-
+use App\Calendar;
 class ContactController extends Controller
 {
     /**
@@ -22,17 +22,14 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function member($day, $month)
+    public function reservationform(Request $request,$day,$month)
+    //
     {
-        $params = [
-            
-            '月'     => $month,
-            '日' => $day,
-            
-        ];
-
-        print_r($params);
-        
+      
+    
+ 
+      return view('contacts.form',compact('month','day'));  
+      
     }
 
     /**
@@ -75,9 +72,11 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function complete(Request $request, Contact $contacts)
     {
-        //
+         
+        
+        return view('contacts.complete');
     }
 
     /**
