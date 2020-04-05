@@ -22,13 +22,13 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reservationform(Request $request,$day,$month)
+    public function reservationform(Request $requesth)
     //
     {
       
     
  
-      return view('contacts.form',compact('month','day'));  
+      return view('contacts.form');  
       
     }
 

@@ -17,8 +17,8 @@ Route::get('/', function () {
 Route::get('/','CalendarController@index');
 
 
-Route::get('contacts/form/{month}/{day}','ContactController@reservationform');
-Route::post('contacts/complete','ContactController@complete');
+Route::get('contacts/form','ContactController@reservationform');
+Route::post('contacts/contacts/complete','ContactController@complete');
 
 
 
