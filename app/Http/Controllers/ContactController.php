@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\Calendar;
@@ -12,9 +13,11 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('contacts.index');
+ 
+        
+          return view('contacts.reservationinformation');
     }
 
     /**
@@ -22,14 +25,10 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reservationform(Request $requesth)
+    public function form(Request $request)
     //
     {
-      
-    
- 
-      return view('contacts.form');  
-      
+          return view('contacts.form');
     }
 
     /**
@@ -60,9 +59,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function login(Contact $contact)
     {
-        //
+        return view('login');
     }
 
     /**
@@ -88,5 +87,12 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+    }
+    public function i(Contact $contact)
+    {
+         $contacts = Contact::all();  
+         $contacts = new Contact(); 
+         
+         return view ('contacts.reservationinformation',['contacts'=>$contacts]);
     }
 }

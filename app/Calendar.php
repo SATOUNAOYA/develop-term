@@ -13,7 +13,7 @@ class Calendar extends Model
             $year = date("Y");
             $month = date("m");
         }
-        
+         
         $prev = strtotime('-1 month',mktime(0, 0, 0, $month, 1, $year));
         $prev_year = date("Y",$prev);
         $prev_month = date("m",$prev);
@@ -35,7 +35,10 @@ class Calendar extends Model
 <a class="btn btn-primary" href="/?year={$prev_year}&month={$prev_month}" role="button">&lt;前月</a>
 {$year}年{$month}月
 <a class="btn btn-primary" href="/?year={$next_year}&month={$next_month}" role="button">翌月&gt;</a>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+  <!-- 自作JavaScriptの読み込み -->
+  <script src="test03.js"></script>
 
 </h2>
 
@@ -51,7 +54,7 @@ class Calendar extends Model
   <th scope="col">土</th>
 </tr>
 EOS;
-   
+  
                         
         // カレンダーの日付部分を生成する
         while ($day <= $lastDay) {
@@ -59,7 +62,7 @@ EOS;
             $this->html .= "<tr>";
             // 各週を描画するHTMLソースを生成する
             for ($i = 0; $i < 7; $i++) {
-                if ($day <= 0 || $day > $lastDay) {
+               if ($day <= 0 || $day > $lastDay) {
                     // 先月・来月の日付の場合
                     $this->html .= "<td>&nbsp;</td>";
                 } else {

@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    protected $fillable = [
-        'name',
-        'staydays',
-        'guests',
-        'room',
-    ];
-}
+  //
+
+ protected $fillable = ['datepicker', 'name', 'staydays','guests','room'];
+  }
+

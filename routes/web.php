@@ -14,11 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/','CalendarController@index');
 
 
-Route::get('contacts/form','ContactController@reservationform');
-Route::post('contacts/contacts/complete','ContactController@complete');
+
+Route::get('contacts/form','ContactController@form');
+Route::post('contacts/complete','ContactController@complete');
+Route::get('contacts/reservationinformation','ContactController@index');
+
+
 
 
 
